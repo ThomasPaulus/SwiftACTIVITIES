@@ -36,7 +36,6 @@ class randomActivitiesViewController: UIViewController {
                     if let json = try? decoder.decode(Bored.self, from: data) {
                         print(json)
                         print(json.activity)
-
                         DispatchQueue.main.async {
                                    self.activityNom.text = json.type
                                }
