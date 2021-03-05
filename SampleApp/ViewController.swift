@@ -6,14 +6,51 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
+
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("coucou")
+        
+       struct Bored: Codable {
+           var activity: String
+           var type: String
+           var participants: Int
+           var price: Double
+           var link: String?
+           var key: String
+           var accessibility: Double
+        
+       }
+        
+        let urlString = "https://www.boredapi.com/api/activity"
+        if let url = URL(string: urlString)
+        {
+            URLSession.shared.dataTask(with: url) { data, res, err in
+                if let data = data {
+                    
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode(Bored.self, from: data) {
+                        print(json)
+                        print(json.activity)
+                        }
+                    }
+                }.resume()
+                
+        }
+        
+
+        // Prints "Durian"
+        
+        
+        
+        //print(product.activity)
+        
     }
 
 
