@@ -2,21 +2,27 @@ import Foundation
 
 import UIKit
 import SwiftyJSON
-import Alamofire
-
 
 class randomActivitiesViewController: UIViewController {
 
-    var sendData:String = "oui"
+    var sendData:String = ""
     
+
     @IBOutlet weak var activityNom: UILabel!
-    @IBOutlet weak var lien: UILabel!
+    @IBOutlet weak var activityType: UILabel!
+    @IBOutlet weak var activityPrice: UILabel!
+    @IBOutlet weak var activityLink: UILabel!
+    @IBOutlet weak var activityAccessibility: UILabel!
+    
+    
+    @IBOutlet weak var pbPrice: UIProgressView!
+    @IBOutlet weak var pbAccessibility: UIProgressView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        lien.text = sendData
         
        struct Bored: Codable {
            var activity: String
@@ -29,7 +35,7 @@ class randomActivitiesViewController: UIViewController {
 
        }
 
-        let urlString = "https://www.boredapi.com/api/activity"
+        let urlString = sendData
         if let url = URL(string: urlString)
         {
             URLSession.shared.dataTask(with: url) { data, res, err in
@@ -40,8 +46,14 @@ class randomActivitiesViewController: UIViewController {
                         print(json)
                         print(json.activity)
                         DispatchQueue.main.async {
-                                   self.activityNom.text = json.type
-                               }
+                            self.activityNom.text = json.activity
+                            self.activityType.text = "Type : " + json.type
+                            self.activityPrice.text = String(format: "%.1f", json.price)
+                            self.pbPrice.progress = (Float)(json.price)
+                            self.activityLink.text = json.link ?? " "
+                            self.activityAccessibility.text = String(format: "%.1f", json.accessibility)
+                            self.pbAccessibility.progress = (Float)(json.accessibility)
+                              }
                         }
                     }
                 }.resume()

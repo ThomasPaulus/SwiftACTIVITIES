@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-var urlStringM: String = "http://www.boredapi.com/api/activity?price=0.0"
+var urlStringM: String = "https://www.boredapi.com/api/activity?price=0.0"
 
 class QuestionController: UITableViewController {
     
@@ -19,9 +19,9 @@ class QuestionController: UITableViewController {
     
     @IBAction func payantAction(_ sender: Any) {
         switch payant.selectedSegmentIndex{
-            case 0: urlStringM="http://www.boredapi.com/api/activity?price=0.0"
+            case 0: urlStringM = "https://www.boredapi.com/api/activity?price=0.0"
                 print(urlStringM);
-            case 1: urlStringM="http://www.boredapi.com/api/activity"
+            case 1: urlStringM = "https://www.boredapi.com/api/activity?minprice=0.1"
                 print(urlStringM);
         default: break;
         }
