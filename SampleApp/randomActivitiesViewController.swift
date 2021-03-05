@@ -14,6 +14,9 @@ import Alamofire
 
 class randomActivitiesViewController: UIViewController {
     
+   
+    @IBOutlet weak var activityNom: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,21 +43,20 @@ class randomActivitiesViewController: UIViewController {
                     if let json = try? decoder.decode(Bored.self, from: data) {
                         print(json)
                         print(json.activity)
+                        
+                        DispatchQueue.main.async {
+                                   self.activityNom.text = json.type
+                               }
                         }
                     }
                 }.resume()
                 
         }
-        
-
-        // Prints "Durian"
+       
         
         
-        
-        //print(product.activity)
+    }
+          
         
     }
 
-    
-    
-}
