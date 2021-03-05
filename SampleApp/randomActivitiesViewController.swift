@@ -7,14 +7,17 @@ import Alamofire
 
 class randomActivitiesViewController: UIViewController {
 
-
-    //@IBOutlet weak var activityNom: UILabel!
-
+    var sendData:String = "oui"
+    
+    @IBOutlet weak var activityNom: UILabel!
+    @IBOutlet weak var lien: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-
+        lien.text = sendData
+        
        struct Bored: Codable {
            var activity: String
            var type: String
