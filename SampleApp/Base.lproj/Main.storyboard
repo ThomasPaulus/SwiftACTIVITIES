@@ -151,6 +151,9 @@
                                 <rect key="frame" x="62" y="679" width="300" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnRetry:" destination="dTl-1Z-CML" eventType="touchUpInside" id="0PE-FV-rbr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90B-xF-Z3r">
                                 <rect key="frame" x="54" y="315" width="299" height="53"/>
@@ -209,7 +212,11 @@
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-Ye-eTf">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="woko" translatesAutoresizingMaskIntoConstraints="NO" id="ZG9-I4-Dz7">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadfix" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-Ye-eTf">
                                 <rect key="frame" x="0.0" y="56" width="414" height="786"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -224,6 +231,7 @@
                         <outlet property="activityNom" destination="Vad-WB-dgR" id="eFY-Vf-uWM"/>
                         <outlet property="activityPrice" destination="ozN-I3-b9O" id="1MZ-DT-XNL"/>
                         <outlet property="activityType" destination="90B-xF-Z3r" id="39u-d9-t1K"/>
+                        <outlet property="imgErr" destination="ZG9-I4-Dz7" id="Lh5-Tf-Qf4"/>
                         <outlet property="imgGif" destination="xYx-Ye-eTf" id="qkO-fF-HdA"/>
                         <outlet property="pbAccessibility" destination="do7-Bj-l53" id="Ge4-MY-UL7"/>
                         <outlet property="pbPrice" destination="H6d-z5-ci7" id="NQ6-mh-q7W"/>
@@ -238,5 +246,7 @@
         <image name="Sans_titre-3" width="888" height="1579"/>
         <image name="Sans_titre-4" width="888" height="1579"/>
         <image name="Sans_titre.jpg" width="1080" height="1920"/>
+        <image name="loadfix" width="810" height="1440"/>
+        <image name="woko" width="888" height="1579"/>
     </resources>
 </document>
