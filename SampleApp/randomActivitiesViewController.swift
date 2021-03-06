@@ -14,7 +14,6 @@ class randomActivitiesViewController: UIViewController {
     @IBOutlet weak var activityLink: UILabel!
     @IBOutlet weak var activityAccessibility: UILabel!
     
-    
     @IBOutlet weak var pbPrice: UIProgressView!
     @IBOutlet weak var pbAccessibility: UIProgressView!
     

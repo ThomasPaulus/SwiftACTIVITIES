@@ -12,10 +12,16 @@ import SwiftyJSON
 import Alamofire
 
 var urlStringM: String = "https://www.boredapi.com/api/activity?price=0.0"
+var sendUrl: String = urlStringM
+var Participants: Float = 1
+let step: Float = 1
 
 class QuestionController: UITableViewController {
     
+    @IBOutlet weak var pbParticpantsOutlet: UISlider!
     @IBOutlet weak var payant: UISegmentedControl!
+    @IBOutlet weak var lblPart: UILabel!
+    
     
     @IBAction func payantAction(_ sender: Any) {
         switch payant.selectedSegmentIndex{
@@ -27,6 +33,13 @@ class QuestionController: UITableViewController {
         }
     }
     
+    @IBAction func pbParticipaationAction(_ sender: Any) {
+        
+        var roundedValue = round(pbParticpantsOutlet.value / step) * step
+        Participants = roundedValue
+        lblPart.text = (NSString(format: "%.2f", Participants) as String)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,9 +48,11 @@ class QuestionController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        sendUrl = urlStringM + "&participants=" + (NSString(format: "%.2f", Participants) as String)
+        print(sendUrl)
         if segue.destination is randomActivitiesViewController {
             let vc = segue.destination as? randomActivitiesViewController
-            vc?.sendData = urlStringM
+            vc?.sendData = sendUrl
         }
     }
 }
