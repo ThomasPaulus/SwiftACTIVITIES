@@ -41,6 +41,7 @@ class QuestionController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        self.title = "What are you looking for ?"
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         

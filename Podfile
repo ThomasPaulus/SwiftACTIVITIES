@@ -10,7 +10,7 @@ target 'SampleApp' do
   pod "PromiseKit", "~> 6.3.4"
   pod 'Alamofire', '5.4.0'
   pod 'SwiftyJSON', '~> 4.0'
-
+  pod 'SwiftGifOrigin', '~> 1.7.0'
 
   target 'SampleAppTests' do
     inherit! :search_paths

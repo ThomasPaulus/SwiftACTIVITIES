@@ -1,12 +1,11 @@
 import Foundation
-
 import UIKit
 import SwiftyJSON
+import SwiftGifOrigin
 
 class randomActivitiesViewController: UIViewController {
 
     var sendData:String = ""
-    
 
     @IBOutlet weak var activityNom: UILabel!
     @IBOutlet weak var activityType: UILabel!
@@ -16,11 +15,16 @@ class randomActivitiesViewController: UIViewController {
     
     @IBOutlet weak var pbPrice: UIProgressView!
     @IBOutlet weak var pbAccessibility: UIProgressView!
+    @IBOutlet weak var imgGif: UIImageView!
     
-    
+    //let imageView = UIImageView()
+    //imgGif.loadGif(name: "load")
     
     override func viewDidLoad() {
+        self.title = "Try this !"
+        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
        struct Bored: Codable {
@@ -32,9 +36,12 @@ class randomActivitiesViewController: UIViewController {
            var key: String
            var accessibility: Double
 
+
        }
 
         let urlString = sendData
+        if self.sendData != "https://www.boredapi.com/api/activity?price=0.0&participants=3.00"
+        {
         if let url = URL(string: urlString)
         {
             URLSession.shared.dataTask(with: url) { data, res, err in
@@ -56,7 +63,11 @@ class randomActivitiesViewController: UIViewController {
                         }
                     }
                 }.resume()
-
+            }
+        }
+        else
+        {
+            print("Salut")
         }
 
 

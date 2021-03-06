@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166.66666666666669" y="82.366071428571431"/>
+            <point key="canvasLocation" x="167" y="107"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Qhx-dd-v0s">
@@ -55,7 +55,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sans_titre-4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Buv-Ga-zgj">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sans_titre-4" translatesAutoresizingMaskIntoConstraints="NO" id="Buv-Ga-zgj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -143,12 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sans_titre-3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bmi-iK-kbc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sans_titre-3" translatesAutoresizingMaskIntoConstraints="NO" id="bmi-iK-kbc">
                                 <rect key="frame" x="0.0" y="56" width="414" height="786"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-gk-yzU">
-                                <rect key="frame" x="15" y="69" width="385" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPq-ke-Ros">
@@ -213,13 +209,10 @@
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Try this :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsl-cV-KLd">
-                                <rect key="frame" x="0.0" y="82" width="414" height="53"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-Ye-eTf">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iMY-d9-AyK"/>
@@ -231,6 +224,7 @@
                         <outlet property="activityNom" destination="Vad-WB-dgR" id="eFY-Vf-uWM"/>
                         <outlet property="activityPrice" destination="ozN-I3-b9O" id="1MZ-DT-XNL"/>
                         <outlet property="activityType" destination="90B-xF-Z3r" id="39u-d9-t1K"/>
+                        <outlet property="imgGif" destination="xYx-Ye-eTf" id="qkO-fF-HdA"/>
                         <outlet property="pbAccessibility" destination="do7-Bj-l53" id="Ge4-MY-UL7"/>
                         <outlet property="pbPrice" destination="H6d-z5-ci7" id="NQ6-mh-q7W"/>
                     </connections>
@@ -241,9 +235,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sans_titre-3.jpg" width="888" height="1579"/>
-        <image name="Sans_titre-4.jpg" width="888" height="1579"/>
-        <image name="Sans_titre.jpg" width="888" height="1579"/>
-        <image name="square.fill" catalog="system" width="64" height="56"/>
+        <image name="Sans_titre-3" width="888" height="1579"/>
+        <image name="Sans_titre-4" width="888" height="1579"/>
+        <image name="Sans_titre.jpg" width="1080" height="1920"/>
     </resources>
 </document>
