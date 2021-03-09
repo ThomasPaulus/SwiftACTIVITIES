@@ -6,6 +6,7 @@ import SwiftGifOrigin
 class randomActivitiesViewController: UIViewController {
 
     var sendData:String = ""
+    let defaults = UserDefaults.standard
 
     @IBOutlet weak var activityNom: UILabel!
     @IBOutlet weak var activityType: UILabel!
@@ -134,6 +135,16 @@ class randomActivitiesViewController: UIViewController {
             self.imgGif.isHidden = true
             self.imgErr.isHidden = false
         }
+    }
+    @IBAction func btnSave(_ sender: Any) {
+        var i = 0;
+        
+        while((defaults.string(forKey:String(i))) != nil)
+        {
+            i = i+1
+        }
+        defaults.set(activityNom.text, forKey: String(i))
+        print("saved at :" + String(i))
     }
     
     }

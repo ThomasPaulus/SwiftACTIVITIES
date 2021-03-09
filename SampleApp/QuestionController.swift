@@ -56,4 +56,5 @@ class QuestionController: UITableViewController {
             vc?.sendData = sendUrl
         }
     }
+
 }
