@@ -24,7 +24,7 @@ class randomActivitiesViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        imgGif.loadGif(asset: "load")
+        imgGif.loadGif(asset: "load") //GIF
     }
 
     
@@ -36,7 +36,7 @@ class randomActivitiesViewController: UIViewController {
         
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        //Struct JSON
         
        struct Bored: Codable {
            var activity: String
@@ -62,7 +62,7 @@ class randomActivitiesViewController: UIViewController {
                     if let json = try? decoder.decode(Bored.self, from: data) {
                         print(json)
                         print(json.activity)
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { // Json -> text
                             self.activityNom.text = json.activity
                             self.activityType.text = "Type : " + json.type
                             self.activityPrice.text = String(format: "%.1f", json.price)
@@ -80,6 +80,7 @@ class randomActivitiesViewController: UIViewController {
         }
         else
         {
+            // Animation
             self.imgGif.isHidden = true
             self.imgErr.isHidden = false
         }
@@ -88,6 +89,8 @@ class randomActivitiesViewController: UIViewController {
 
     }
 
+    // Retry ( moche )
+    
     @IBAction func btnRetry(_ sender: Any) {
         self.imgGif.isHidden = false
         struct Bored: Codable {
@@ -136,6 +139,8 @@ class randomActivitiesViewController: UIViewController {
             self.imgErr.isHidden = false
         }
     }
+    
+    //Save to list
     @IBAction func btnSave(_ sender: Any) {
         var i = 0;
         
@@ -145,6 +150,18 @@ class randomActivitiesViewController: UIViewController {
         }
         defaults.set(activityNom.text, forKey: String(i))
         print("saved at :" + String(i))
+        
+        var dialogMessage = UIAlertController(title: "Saved", message: "Activity saved", preferredStyle: .alert)
+              let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                 self.dismiss(animated: true, completion: nil)
+              })
+               dialogMessage.addAction(ok)
+              self.present(dialogMessage, animated: true, completion: nil)
+        
+        
+
+       
+        
     }
     
     }
