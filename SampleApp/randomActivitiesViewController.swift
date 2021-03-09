@@ -140,7 +140,7 @@ class randomActivitiesViewController: UIViewController {
         }
     }
     
-    //Save to list
+    
     @IBAction func btnSave(_ sender: Any) {
         var i = 0;
         
